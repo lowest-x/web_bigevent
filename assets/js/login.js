@@ -31,7 +31,7 @@ $('#form_reg').on('submit',function(e){
     username: $('#form_reg [name=username]').val(),
     password: $('#form_reg [name=password]').val(),
   }
-  $.post('http://www.liulongbin.top:3007/api/reguser',data,function(res){
+  $.post('/api/reguser',data,function(res){
     if(res.status !== 0) {
       // return console.log(res.message);
       return layer.msg(res.message);
@@ -47,7 +47,7 @@ $('#form_reg').on('submit',function(e){
 $('#form_login').submit(function(e){
   e.preventDefault()
   $.ajax({
-    url:'http://www.liulongbin.top:3007/api/login',
+    url:'/api/login',
     method:'POST',
     data: $(this).serialize(),
     success: function(res){
